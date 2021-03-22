@@ -13350,11 +13350,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\NHAN-TTCNTT\\Documents\\3-LapTrinh\\NetCore\\IdentityCoreApp\\IdentityCoreApp\\IdentityCoreApp.csproj",
+      "projectUniqueName": "C:\\Users\\NHAN-TTCNTT\\Documents\\4-Github\\IdentityCoreApp\\IdentityCoreApp\\IdentityCoreApp.csproj",
       "projectName": "IdentityCoreApp",
-      "projectPath": "C:\\Users\\NHAN-TTCNTT\\Documents\\3-LapTrinh\\NetCore\\IdentityCoreApp\\IdentityCoreApp\\IdentityCoreApp.csproj",
+      "projectPath": "C:\\Users\\NHAN-TTCNTT\\Documents\\4-Github\\IdentityCoreApp\\IdentityCoreApp\\IdentityCoreApp.csproj",
       "packagesPath": "C:\\Users\\NHAN-TTCNTT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\NHAN-TTCNTT\\Documents\\3-LapTrinh\\NetCore\\IdentityCoreApp\\IdentityCoreApp\\obj\\",
+      "outputPath": "C:\\Users\\NHAN-TTCNTT\\Documents\\4-Github\\IdentityCoreApp\\IdentityCoreApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13373,11 +13373,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\NHAN-TTCNTT\\Documents\\3-LapTrinh\\NetCore\\IdentityCoreApp\\IdentityCoreApp.Application\\IdentityCoreApp.Application.csproj": {
-              "projectPath": "C:\\Users\\NHAN-TTCNTT\\Documents\\3-LapTrinh\\NetCore\\IdentityCoreApp\\IdentityCoreApp.Application\\IdentityCoreApp.Application.csproj"
+            "C:\\Users\\NHAN-TTCNTT\\Documents\\4-Github\\IdentityCoreApp\\IdentityCoreApp.Application\\IdentityCoreApp.Application.csproj": {
+              "projectPath": "C:\\Users\\NHAN-TTCNTT\\Documents\\4-Github\\IdentityCoreApp\\IdentityCoreApp.Application\\IdentityCoreApp.Application.csproj"
             },
-            "C:\\Users\\NHAN-TTCNTT\\Documents\\3-LapTrinh\\NetCore\\IdentityCoreApp\\IdentityCoreApp.Data.EF\\IdentityCoreApp.Data.EF.csproj": {
-              "projectPath": "C:\\Users\\NHAN-TTCNTT\\Documents\\3-LapTrinh\\NetCore\\IdentityCoreApp\\IdentityCoreApp.Data.EF\\IdentityCoreApp.Data.EF.csproj"
+            "C:\\Users\\NHAN-TTCNTT\\Documents\\4-Github\\IdentityCoreApp\\IdentityCoreApp.Data.EF\\IdentityCoreApp.Data.EF.csproj": {
+              "projectPath": "C:\\Users\\NHAN-TTCNTT\\Documents\\4-Github\\IdentityCoreApp\\IdentityCoreApp.Data.EF\\IdentityCoreApp.Data.EF.csproj"
             }
           }
         }

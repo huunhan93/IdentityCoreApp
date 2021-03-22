@@ -213,7 +213,7 @@ namespace IdentityCoreApp.Controllers
                 if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
                 {
                     // Don't reveal that the user does not exist or is not confirmed
-                    return RedirectToAction(nameof(ForgotPasswordConfirmation));
+                    return new ObjectResult(new GenericResult(false, "Tài khoản không tồn tại hoặc chưa kích hoạt."));
                 }
 
                 // For more information on how to enable account confirmation and password reset please
@@ -222,11 +222,11 @@ namespace IdentityCoreApp.Controllers
                 var callbackUrl = Url.ResetPasswordCallbackLink(user.Id, code, Request.Scheme);
                 await _emailSender.SendEmailAsync(model.Email, "Reset Password",
                    $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
-                return RedirectToAction(nameof(ForgotPasswordConfirmation));
+                return new ObjectResult(new GenericResult(true, "Reset password thành công. Check email để nhận mật khẩu mới!"));
             }
 
             // If we got this far, something failed, redisplay form
-            return View(model);
+            return new ObjectResult(new GenericResult(false, "Lỗi không xác định"));
         }
 
         [HttpGet]

@@ -5523,11 +5523,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\NHAN-TTCNTT\\Documents\\3-LapTrinh\\NetCore\\IdentityCoreApp\\IdentityCoreApp.Data\\IdentityCoreApp.Data.csproj",
+      "projectUniqueName": "C:\\Users\\NHAN-TTCNTT\\Documents\\4-Github\\IdentityCoreApp\\IdentityCoreApp.Data\\IdentityCoreApp.Data.csproj",
       "projectName": "IdentityCoreApp.Data",
-      "projectPath": "C:\\Users\\NHAN-TTCNTT\\Documents\\3-LapTrinh\\NetCore\\IdentityCoreApp\\IdentityCoreApp.Data\\IdentityCoreApp.Data.csproj",
+      "projectPath": "C:\\Users\\NHAN-TTCNTT\\Documents\\4-Github\\IdentityCoreApp\\IdentityCoreApp.Data\\IdentityCoreApp.Data.csproj",
       "packagesPath": "C:\\Users\\NHAN-TTCNTT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\NHAN-TTCNTT\\Documents\\3-LapTrinh\\NetCore\\IdentityCoreApp\\IdentityCoreApp.Data\\obj\\",
+      "outputPath": "C:\\Users\\NHAN-TTCNTT\\Documents\\4-Github\\IdentityCoreApp\\IdentityCoreApp.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5546,8 +5546,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\NHAN-TTCNTT\\Documents\\3-LapTrinh\\NetCore\\IdentityCoreApp\\IdentityCoreApp.Infrastructure\\IdentityCoreApp.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\NHAN-TTCNTT\\Documents\\3-LapTrinh\\NetCore\\IdentityCoreApp\\IdentityCoreApp.Infrastructure\\IdentityCoreApp.Infrastructure.csproj"
+            "C:\\Users\\NHAN-TTCNTT\\Documents\\4-Github\\IdentityCoreApp\\IdentityCoreApp.Infrastructure\\IdentityCoreApp.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\NHAN-TTCNTT\\Documents\\4-Github\\IdentityCoreApp\\IdentityCoreApp.Infrastructure\\IdentityCoreApp.Infrastructure.csproj"
             }
           }
         }

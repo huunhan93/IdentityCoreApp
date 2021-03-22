@@ -7,3 +7,12 @@ C:\Users\NHAN-TTCNTT\Documents\3-LapTrinh\NetCore\IdentityCoreApp\IdentityCoreAp
 C:\Users\NHAN-TTCNTT\Documents\3-LapTrinh\NetCore\IdentityCoreApp\IdentityCoreApp.Infrastructure\obj\Debug\netcoreapp2.2\IdentityCoreApp.Infrastructure.AssemblyInfo.cs
 C:\Users\NHAN-TTCNTT\Documents\3-LapTrinh\NetCore\IdentityCoreApp\IdentityCoreApp.Infrastructure\obj\Debug\netcoreapp2.2\IdentityCoreApp.Infrastructure.dll
 C:\Users\NHAN-TTCNTT\Documents\3-LapTrinh\NetCore\IdentityCoreApp\IdentityCoreApp.Infrastructure\obj\Debug\netcoreapp2.2\IdentityCoreApp.Infrastructure.pdb
+C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp.Infrastructure\bin\Debug\netcoreapp2.2\IdentityCoreApp.Infrastructure.deps.json
+C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp.Infrastructure\bin\Debug\netcoreapp2.2\IdentityCoreApp.Infrastructure.dll
+C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp.Infrastructure\bin\Debug\netcoreapp2.2\IdentityCoreApp.Infrastructure.pdb
+C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp.Infrastructure\obj\Debug\netcoreapp2.2\IdentityCoreApp.Infrastructure.csprojAssemblyReference.cache
+C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp.Infrastructure\obj\Debug\netcoreapp2.2\IdentityCoreApp.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp.Infrastructure\obj\Debug\netcoreapp2.2\IdentityCoreApp.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp.Infrastructure\obj\Debug\netcoreapp2.2\IdentityCoreApp.Infrastructure.AssemblyInfo.cs
+C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp.Infrastructure\obj\Debug\netcoreapp2.2\IdentityCoreApp.Infrastructure.dll
+C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp.Infrastructure\obj\Debug\netcoreapp2.2\IdentityCoreApp.Infrastructure.pdb

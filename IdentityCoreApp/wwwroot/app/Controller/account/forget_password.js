@@ -1,5 +1,6 @@
 ﻿var forgotPasswordController = function () {
-    this.initialize = function () {
+    var _this = {}
+    _this.initialize = function () {
         registerEvents();
     };
 
@@ -24,15 +25,16 @@
 
         $('#btnForgotPassword').on('click', function (e) {
             e.preventDefault();
+            var email = $("#txtEmail").val();
             if ($('#frmForgotPassword').valid()) {
                 $(this).addClass("disabled");
                 $.ajax({
                     type: 'POST',
                     data: {
-                        Email: $("#txtEmail").val()
+                        Email: email
                     },
                     dateType: 'json',
-                    url: '/account/ForgotPassword',
+                    url: '/Account/ForgotPassword',
                     success: function (res) {
                         if (res.Success) {
                             tedu.notify('Thành công: ' + res.Message, 'success');
@@ -48,4 +50,6 @@
             }
         });
     }
+
+    return _this;
 };

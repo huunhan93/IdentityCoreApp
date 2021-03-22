@@ -693,11 +693,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\NHAN-TTCNTT\\Documents\\3-LapTrinh\\NetCore\\IdentityCoreApp\\IdentityCoreApp.Utilities\\IdentityCoreApp.Utilities.csproj",
+      "projectUniqueName": "C:\\Users\\NHAN-TTCNTT\\Documents\\4-Github\\IdentityCoreApp\\IdentityCoreApp.Utilities\\IdentityCoreApp.Utilities.csproj",
       "projectName": "IdentityCoreApp.Utilities",
-      "projectPath": "C:\\Users\\NHAN-TTCNTT\\Documents\\3-LapTrinh\\NetCore\\IdentityCoreApp\\IdentityCoreApp.Utilities\\IdentityCoreApp.Utilities.csproj",
+      "projectPath": "C:\\Users\\NHAN-TTCNTT\\Documents\\4-Github\\IdentityCoreApp\\IdentityCoreApp.Utilities\\IdentityCoreApp.Utilities.csproj",
       "packagesPath": "C:\\Users\\NHAN-TTCNTT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\NHAN-TTCNTT\\Documents\\3-LapTrinh\\NetCore\\IdentityCoreApp\\IdentityCoreApp.Utilities\\obj\\",
+      "outputPath": "C:\\Users\\NHAN-TTCNTT\\Documents\\4-Github\\IdentityCoreApp\\IdentityCoreApp.Utilities\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
