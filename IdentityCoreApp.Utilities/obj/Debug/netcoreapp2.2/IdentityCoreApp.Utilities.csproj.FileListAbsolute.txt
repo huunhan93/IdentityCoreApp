@@ -1,0 +1,9 @@
+C:\Users\NHAN-TTCNTT\Documents\3-LapTrinh\NetCore\IdentityCoreApp\IdentityCoreApp.Utilities\bin\Debug\netcoreapp2.2\IdentityCoreApp.Utilities.deps.json
+C:\Users\NHAN-TTCNTT\Documents\3-LapTrinh\NetCore\IdentityCoreApp\IdentityCoreApp.Utilities\bin\Debug\netcoreapp2.2\IdentityCoreApp.Utilities.dll
+C:\Users\NHAN-TTCNTT\Documents\3-LapTrinh\NetCore\IdentityCoreApp\IdentityCoreApp.Utilities\bin\Debug\netcoreapp2.2\IdentityCoreApp.Utilities.pdb
+C:\Users\NHAN-TTCNTT\Documents\3-LapTrinh\NetCore\IdentityCoreApp\IdentityCoreApp.Utilities\obj\Debug\netcoreapp2.2\IdentityCoreApp.Utilities.csprojAssemblyReference.cache
+C:\Users\NHAN-TTCNTT\Documents\3-LapTrinh\NetCore\IdentityCoreApp\IdentityCoreApp.Utilities\obj\Debug\netcoreapp2.2\IdentityCoreApp.Utilities.csproj.CoreCompileInputs.cache
+C:\Users\NHAN-TTCNTT\Documents\3-LapTrinh\NetCore\IdentityCoreApp\IdentityCoreApp.Utilities\obj\Debug\netcoreapp2.2\IdentityCoreApp.Utilities.AssemblyInfoInputs.cache
+C:\Users\NHAN-TTCNTT\Documents\3-LapTrinh\NetCore\IdentityCoreApp\IdentityCoreApp.Utilities\obj\Debug\netcoreapp2.2\IdentityCoreApp.Utilities.AssemblyInfo.cs
+C:\Users\NHAN-TTCNTT\Documents\3-LapTrinh\NetCore\IdentityCoreApp\IdentityCoreApp.Utilities\obj\Debug\netcoreapp2.2\IdentityCoreApp.Utilities.dll
+C:\Users\NHAN-TTCNTT\Documents\3-LapTrinh\NetCore\IdentityCoreApp\IdentityCoreApp.Utilities\obj\Debug\netcoreapp2.2\IdentityCoreApp.Utilities.pdb

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IdentityCoreApp.Data.EF\IdentityCoreApp.Data.EF.csproj" />
+    <ProjectReference Include="..\IdentityCoreApp.Data\IdentityCoreApp.Data.csproj" />
+    <ProjectReference Include="..\IdentityCoreApp.Infrastructure\IdentityCoreApp.Infrastructure.csproj" />
+    <ProjectReference Include="..\IdentityCoreApp.Utilities\IdentityCoreApp.Utilities.csproj" />
+  </ItemGroup>
+
+</Project>

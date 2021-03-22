@@ -1,0 +1,26 @@
+﻿<!-- Nav Item - Pages Collapse Menu -->
+@model List<FunctionViewModel>
+
+@foreach (var item in Model.Where(x => string.IsNullOrEmpty(x.ParentId)))
+{
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#@item.Id"
+           aria-expanded="true" aria-controls="@item.Id">
+            <i class="fas fa-fw @item.IconCss"></i>
+            <span>@item.Name</span>
+        </a>
+        <div id="@item.Id" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            @if (Model.Any(x => x.ParentId == item.Id))
+            {
+                <div class="bg-white py-2 collapse-inner rounded">
+                    @foreach (var jitem in Model.Where(x => x.ParentId == item.Id))
+                    {
+                        <a class="collapse-item" href="@jitem.URL">@jitem.Name</a>
+                    }
+                </div>
+            }
+        </div>
+    </li>
+}
+
+
