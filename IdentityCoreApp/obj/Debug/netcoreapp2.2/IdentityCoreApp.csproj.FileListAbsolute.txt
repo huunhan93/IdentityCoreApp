@@ -101,3 +101,4 @@ C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp\obj\Debu
 C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp\obj\Debug\netcoreapp2.2\Razor\Views\Role\Index.g.cshtml.cs
 C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp\obj\Debug\netcoreapp2.2\Razor\Views\Account\Index.g.cshtml.cs
 C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp\obj\Debug\netcoreapp2.2\Razor\Views\Account\ChangePassword.g.cshtml.cs
+C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp\obj\Debug\netcoreapp2.2\Razor\Views\Account\Lockout.g.cshtml.cs

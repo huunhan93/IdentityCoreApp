@@ -50,6 +50,7 @@ namespace IdentityCoreApp.Controllers
             return View();
         }
 
+        #region Login
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> Login(string returnUrl = null)
@@ -91,22 +92,13 @@ namespace IdentityCoreApp.Controllers
                     _logger.LogWarning("User account locked out.");
                     return RedirectToAction(nameof(Lockout));
                 }
-                else
-                {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-                    return View(model);
-                }
+
+                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                return View(model);
             }
 
             // If we got this far, something failed, redisplay form
             return View(model);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Logout()
-        {
-            await _signInManager.SignOutAsync();
-            return Redirect("/Account/Login");
         }
 
         [HttpPost]
@@ -202,14 +194,20 @@ namespace IdentityCoreApp.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             return View(nameof(ExternalLogin), model);
         }
+        #endregion Login
 
-        [HttpGet]
-        [AllowAnonymous]
-        public IActionResult Lockout()
+
+        #region Logout
+        [HttpPost]
+        public async Task<IActionResult> Logout()
         {
-            return View();
+            await _signInManager.SignOutAsync();
+            return Redirect("/Account/Login");
         }
+        #endregion Logout
 
+
+        #region Register 
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Register(string returnUrl = null)
@@ -281,7 +279,7 @@ namespace IdentityCoreApp.Controllers
                 throw new ApplicationException($"Unable to load user with ID '{userId}'.");
             }
             var result = await _userManager.ConfirmEmailAsync(user, code);
-            
+
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
 
@@ -290,85 +288,10 @@ namespace IdentityCoreApp.Controllers
 
             return View();
         }
+        #endregion Register
 
-        public IActionResult ChangePassword()
-        {
-            ViewData["Success"] = false;
-            return View();
-        }
 
-        [HttpPost]
-        public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
-            var email = User.GetSpecificClaim("Email").ToString();
-            var user = await _userManager.FindByEmailAsync(email);
-            if(user == null)
-            {
-                ModelState.AddModelError(string.Empty, "Account is not exist");
-                return View();
-            }
-            var result = await _userManager.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
-            if (result.Succeeded)
-            {
-                ViewData["Success"] = true;
-                return View(model);
-            }
-            else
-            {
-                ViewData["Success"] = false;
-                AddErrors(result);
-            }
-            return View();
-
-        }
-
-        [HttpGet]
-        [AllowAnonymous]
-        public IActionResult ResetPassword(string code = null)
-        {
-            if (code == null)
-            {
-                throw new ApplicationException("A code must be supplied for password reset.");
-            }
-            var model = new ResetPasswordViewModel { Code = code };
-            return View(model);
-        }
-
-        [HttpPost]
-        [AllowAnonymous]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-            var user = await _userManager.FindByEmailAsync(model.Email);
-            if (user == null)
-            {
-                // Don't reveal that the user does not exist
-                return RedirectToAction(nameof(ResetPasswordConfirmation));
-            }
-            var result = await _userManager.ResetPasswordAsync(user, model.Code, model.Password);
-            if (result.Succeeded)
-            {
-                return RedirectToAction(nameof(ResetPasswordConfirmation));
-            }
-            AddErrors(result);
-            return View();
-        }
-
-        [HttpGet]
-        [AllowAnonymous]
-        public IActionResult ResetPasswordConfirmation()
-        {
-            return View();
-        }
-
+        #region Forgot Password
         [HttpGet]
         [AllowAnonymous]
         public IActionResult ForgotPassword()
@@ -414,6 +337,90 @@ namespace IdentityCoreApp.Controllers
             return View();
         }
 
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult ResetPassword(string code = null)
+        {
+            if (code == null)
+            {
+                throw new ApplicationException("A code must be supplied for password reset.");
+            }
+            var model = new ResetPasswordViewModel { Code = code };
+            return View(model);
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user == null)
+            {
+                // Don't reveal that the user does not exist
+                return RedirectToAction(nameof(ResetPasswordConfirmation));
+            }
+            var result = await _userManager.ResetPasswordAsync(user, model.Code, model.Password);
+            if (result.Succeeded)
+            {
+                return RedirectToAction(nameof(ResetPasswordConfirmation));
+            }
+            AddErrors(result);
+            return View();
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult ResetPasswordConfirmation()
+        {
+            return View();
+        }
+
+        #endregion Forgot Password
+
+
+        #region Change Password
+        public IActionResult ChangePassword()
+        {
+            ViewData["Success"] = false;
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            var email = User.GetSpecificClaim("Email").ToString();
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user == null)
+            {
+                ModelState.AddModelError(string.Empty, "Account is not exist");
+                return View();
+            }
+            var result = await _userManager.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
+            if (result.Succeeded)
+            {
+                ViewData["Success"] = true;
+                return View(model);
+            }
+            else
+            {
+                ViewData["Success"] = false;
+                AddErrors(result);
+            }
+            return View();
+
+        }
+        #endregion Change Password
+
+
         #region Helpers
 
         private void AddErrors(IdentityResult result)
@@ -437,5 +444,38 @@ namespace IdentityCoreApp.Controllers
         }
 
         #endregion
+
+
+        [HttpPut]
+        public async Task<IActionResult> SaveEntity(AppUserViewModel userVm)
+        {
+            if (!ModelState.IsValid)
+            {
+                IEnumerable<ModelError> allErrors = ModelState.Values.SelectMany(v => v.Errors);
+                return new ObjectResult(new GenericResult(false, allErrors));
+            }
+            if (userVm.Id == null)
+            {
+                await _userService.AddAsync(userVm);
+            }
+            else
+            {
+                await _userService.UpdateAsync(userVm);
+            }
+            return new ObjectResult(new GenericResult(true, "Cập nhật thành công"));
+        }
+
+        
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Lockout()
+        {
+            return View();
+        }
+
+        
+
+        
     }
 }

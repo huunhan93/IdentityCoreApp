@@ -33,24 +33,7 @@ namespace IdentityCoreApp.Controllers
             return View();
         }
 
-        [HttpPut]
-        public async Task<IActionResult> SaveEntity(AppUserViewModel userVm)
-        {
-            if (!ModelState.IsValid)
-            {
-                IEnumerable<ModelError> allErrors = ModelState.Values.SelectMany(v => v.Errors);
-                return new ObjectResult(new GenericResult(false, allErrors));
-            }
-            if (userVm.Id == null)
-            {
-                await _userService.AddAsync(userVm);
-            }
-            else
-            {
-                await _userService.UpdateAsync(userVm);
-            }
-            return new ObjectResult(new GenericResult(true, "Cập nhật thành công"));
-        }
+        
 
     }
 }
