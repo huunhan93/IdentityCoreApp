@@ -9,6 +9,7 @@ using IdentityCoreApp.Data.Entities;
 using IdentityCoreApp.Data.Enums;
 using IdentityCoreApp.Extensions;
 using IdentityCoreApp.Models.AccountViewModels;
+using IdentityCoreApp.Models.ManageViewModels;
 using IdentityCoreApp.Services;
 using IdentityCoreApp.Utilities.Dtos;
 using Microsoft.AspNetCore.Authentication;
@@ -42,6 +43,11 @@ namespace IdentityCoreApp.Controllers
             _emailSender = emailSender;
             _userService = userService;
             _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            return View();
         }
 
         [HttpGet]
@@ -283,6 +289,41 @@ namespace IdentityCoreApp.Controllers
         {
 
             return View();
+        }
+
+        public IActionResult ChangePassword()
+        {
+            ViewData["Success"] = false;
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            var email = User.GetSpecificClaim("Email").ToString();
+            var user = await _userManager.FindByEmailAsync(email);
+            if(user == null)
+            {
+                ModelState.AddModelError(string.Empty, "Account is not exist");
+                return View();
+            }
+            var result = await _userManager.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
+            if (result.Succeeded)
+            {
+                ViewData["Success"] = true;
+                return View(model);
+            }
+            else
+            {
+                ViewData["Success"] = false;
+                AddErrors(result);
+            }
+            return View();
+
         }
 
         [HttpGet]

@@ -19,42 +19,47 @@ using IdentityCoreApp;
 #line default
 #line hidden
 #line 2 "C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp\Views\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using IdentityCoreApp.Authorization;
 
 #line default
 #line hidden
 #line 3 "C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp\Views\_ViewImports.cshtml"
-using IdentityCoreApp.Models;
+using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #line 4 "C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp\Views\_ViewImports.cshtml"
-using IdentityCoreApp.Models.AccountViewModels;
+using IdentityCoreApp.Models;
 
 #line default
 #line hidden
 #line 5 "C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp\Views\_ViewImports.cshtml"
-using IdentityCoreApp.Models.ManageViewModels;
+using IdentityCoreApp.Models.AccountViewModels;
 
 #line default
 #line hidden
 #line 6 "C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp\Views\_ViewImports.cshtml"
-using IdentityCoreApp.Data.Entities;
+using IdentityCoreApp.Models.ManageViewModels;
 
 #line default
 #line hidden
 #line 7 "C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp\Views\_ViewImports.cshtml"
-using IdentityCoreApp.Application.ViewModels.System;
+using IdentityCoreApp.Data.Entities;
 
 #line default
 #line hidden
 #line 8 "C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp\Views\_ViewImports.cshtml"
+using IdentityCoreApp.Application.ViewModels.System;
+
+#line default
+#line hidden
+#line 9 "C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp\Views\_ViewImports.cshtml"
 using IdentityCoreApp.Extensions;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"015fb90044fc48b2185a3c790738fed158502009", @"/Views/Shared/_ValidationScriptsPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0d5f42a23428601714ae170f928a9d6fb9384d24", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1d0fda2bedb81bda18adf7b400eaef458e78d784", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__ValidationScriptsPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/lib/jquery-validation/dist/jquery.validate.js"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -95,12 +100,12 @@ using IdentityCoreApp.Extensions;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             BeginContext(0, 224, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "015fb90044fc48b2185a3c790738fed1585020099468", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "015fb90044fc48b2185a3c790738fed1585020099646", async() => {
                 BeginContext(35, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(41, 71, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "015fb90044fc48b2185a3c790738fed1585020099858", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "015fb90044fc48b2185a3c790738fed15850200910036", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -118,7 +123,7 @@ using IdentityCoreApp.Extensions;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(118, 90, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "015fb90044fc48b2185a3c790738fed15850200911111", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "015fb90044fc48b2185a3c790738fed15850200911290", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -153,12 +158,12 @@ using IdentityCoreApp.Extensions;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(226, 932, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "015fb90044fc48b2185a3c790738fed15850200913372", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "015fb90044fc48b2185a3c790738fed15850200913551", async() => {
                 BeginContext(261, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(267, 393, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "015fb90044fc48b2185a3c790738fed15850200913766", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "015fb90044fc48b2185a3c790738fed15850200913945", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ScriptTagHelper>();
@@ -183,7 +188,7 @@ using IdentityCoreApp.Extensions;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(666, 476, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "015fb90044fc48b2185a3c790738fed15850200915717", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "015fb90044fc48b2185a3c790738fed15850200915896", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ScriptTagHelper>();

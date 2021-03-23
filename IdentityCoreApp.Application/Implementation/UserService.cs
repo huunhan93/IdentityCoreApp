@@ -28,12 +28,15 @@ namespace IdentityCoreApp.Application.Implementation
         {
             var user = new AppUser()
             {
-                UserName = userVm.UserName,
+                UserName = userVm.Email,
                 Avatar = userVm.Avatar,
                 Email = userVm.Email,
                 FullName = userVm.FullName,
+                BirthDay = DateTime.ParseExact(userVm.BirthDay.ToString(), "dd/MM/yyyy", provider),
                 DateCreated = DateTime.Now,
-                PhoneNumber = userVm.PhoneNumber
+                PhoneNumber = userVm.PhoneNumber,
+                Status = userVm.Status,
+                Address = userVm.Address
             };
             var result = await _userManager.CreateAsync(user, userVm.Password);
             if (result.Succeeded && userVm.Roles.Count > 0)

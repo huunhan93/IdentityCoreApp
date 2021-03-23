@@ -19,42 +19,47 @@ using IdentityCoreApp;
 #line default
 #line hidden
 #line 2 "C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp\Views\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using IdentityCoreApp.Authorization;
 
 #line default
 #line hidden
 #line 3 "C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp\Views\_ViewImports.cshtml"
-using IdentityCoreApp.Models;
+using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #line 4 "C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp\Views\_ViewImports.cshtml"
-using IdentityCoreApp.Models.AccountViewModels;
+using IdentityCoreApp.Models;
 
 #line default
 #line hidden
 #line 5 "C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp\Views\_ViewImports.cshtml"
-using IdentityCoreApp.Models.ManageViewModels;
+using IdentityCoreApp.Models.AccountViewModels;
 
 #line default
 #line hidden
 #line 6 "C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp\Views\_ViewImports.cshtml"
-using IdentityCoreApp.Data.Entities;
+using IdentityCoreApp.Models.ManageViewModels;
 
 #line default
 #line hidden
 #line 7 "C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp\Views\_ViewImports.cshtml"
-using IdentityCoreApp.Application.ViewModels.System;
+using IdentityCoreApp.Data.Entities;
 
 #line default
 #line hidden
 #line 8 "C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp\Views\_ViewImports.cshtml"
+using IdentityCoreApp.Application.ViewModels.System;
+
+#line default
+#line hidden
+#line 9 "C:\Users\NHAN-TTCNTT\Documents\4-Github\IdentityCoreApp\IdentityCoreApp\Views\_ViewImports.cshtml"
 using IdentityCoreApp.Extensions;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bae8a9ed3260ef59ff722736c89f7026d5ec20d7", @"/Views/Shared/Components/SideBar/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0d5f42a23428601714ae170f928a9d6fb9384d24", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1d0fda2bedb81bda18adf7b400eaef458e78d784", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_SideBar_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<FunctionViewModel>>
     {
         #pragma warning disable 1998

@@ -49,7 +49,7 @@ namespace IdentityCoreApp.Data.EF
             {
                 await _userManager.CreateAsync(new AppUser()
                 {
-                    UserName = "admin",
+                    UserName = "hohuunhandt@gmail.com",
                     FullName = "Administrator",
                     Email = "hohuunhandt@gmail.com",
                     Balance = 0,
