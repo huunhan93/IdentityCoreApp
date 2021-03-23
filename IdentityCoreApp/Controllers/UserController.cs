@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using IdentityCoreApp.Application.Interfaces;
 using IdentityCoreApp.Application.ViewModels.System;
 using IdentityCoreApp.Data.Entities;
+using IdentityCoreApp.Extensions;
 using IdentityCoreApp.Models.AccountViewModels;
+using IdentityCoreApp.Utilities.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -24,9 +26,31 @@ namespace IdentityCoreApp.Controllers
 
         public IActionResult Index()
         {
+            if (User.GetSpecificClaim("Email").ToString().Equals(""))
+            {
+                return Redirect("/Account/Login");
+            }
             return View();
         }
 
-        
+        [HttpPut]
+        public async Task<IActionResult> SaveEntity(AppUserViewModel userVm)
+        {
+            if (!ModelState.IsValid)
+            {
+                IEnumerable<ModelError> allErrors = ModelState.Values.SelectMany(v => v.Errors);
+                return new ObjectResult(new GenericResult(false, allErrors));
+            }
+            if (userVm.Id == null)
+            {
+                await _userService.AddAsync(userVm);
+            }
+            else
+            {
+                await _userService.UpdateAsync(userVm);
+            }
+            return new ObjectResult(new GenericResult(true, "Cập nhật thành công"));
+        }
+
     }
 }

@@ -30,4 +30,9 @@
     <ProjectReference Include="..\IdentityCoreApp.Data.EF\IdentityCoreApp.Data.EF.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="wwwroot\app\Controller\account\" />
+  </ItemGroup>
+
 </Project>

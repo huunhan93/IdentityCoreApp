@@ -25,7 +25,7 @@ namespace IdentityCoreApp.Controllers
         {
             if (User.GetSpecificClaim("Email").ToString().Equals(""))
             {
-                return Redirect("/Login/Index");
+                return Redirect("/Account/Login");
             }
 
             return View();

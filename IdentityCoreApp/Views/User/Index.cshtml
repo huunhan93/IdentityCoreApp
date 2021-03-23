@@ -1,1 +1,59 @@
 ﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section Scripts{
+    <script src="~/app/Controller/user/index.js"></script>
+    <script>
+        var userObject = userControler();
+        userObject.initialize();
+    </script>
+}
+
+<div class="row">
+    <div class="col-lg-6">
+        <!-- Circle Buttons -->
+        <form id="frmAccount">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Thông tin tài khoản</h6>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="txtIdUser" hidden="hidden"
+                               value="@User.GetSpecificClaim("UserId")">
+                        <input type="email" class="form-control" id="txtEmail" placeholder="name@example.com" disabled
+                               value="@User.GetSpecificClaim("Email")">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Họ tên</label>
+                        <input type="text" class="form-control" id="txtFullName" placeholder="Nguyễn Văn A"
+                               value="@User.GetSpecificClaim("FullName")">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Số điện thoại</label>
+                        <input type="text" class="form-control" id="txtPhoneNumber" placeholder="09xxxx"
+                               value="@User.GetSpecificClaim("PhoneNumber")">
+                    </div>
+                    <div class="mb-3" data-date-format="dd/mm/yyyy">
+                        <label for="exampleFormControlInput1" class="form-label">Ngày sinh</label>
+                        <input type="text" class="form-control" id="txtBirthDay" readonly
+                               value="@User.GetSpecificClaim("BirthDay")">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Địa chỉ</label>
+                        <textarea class="form-control" id="txtAddress" rows="3">@User.GetSpecificClaim("Address")</textarea>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" id="btnUpdate" class="btn btn-primary">Cập nhật</button>
+                    <button type="button" id="btnChangePassword" class="btn btn-success">Đổi mật khẩu</button>
+                    <button type="button" id="btnLogout" class="btn btn-danger">Đăng xuất</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

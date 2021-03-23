@@ -1,4 +1,4 @@
-﻿var accountControler = function () {
+﻿var userControler = function () {
     var _this = {};
     _this.initialize = function () {
         registerEvents();
