@@ -1,4 +1,5 @@
-﻿@{
+﻿@model RegisterViewModel
+@{
     Layout = null;
 }
 <!DOCTYPE html>
@@ -12,7 +13,7 @@
     <title>SB Admin 2 - Register</title>
     <!-- Custom fonts for this template-->
     <link href="~/lib/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    <link href="https://fonts.googleapis.com/css?family=Roboto:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="~/css/sb-admin-2.min.css" rel="stylesheet">
@@ -30,41 +31,40 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form class="user" id="frmRegister">
-                                @Html.AntiForgeryToken()
+                            <form class="user" asp-route-returnUrl="@ViewData["ReturnUrl"]">
+                                <div asp-validation-summary="All" class="text-danger"></div>
                                 <div class="form-group row">
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="txtHoTen" name="hoten"
-                                               placeholder="Họ và tên">
+                                        <input type="text" class="form-control form-control-user" 
+                                               asp-for="FullName" name="FullName" placeholder="Họ và tên" />
                                     </div>
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="txtSDT" name="sdt"
-                                               placeholder="Số điện thoại">
+                                        <input type="text" class="form-control form-control-user"
+                                               asp-for="PhoneNumber" name="PhoneNumber" placeholder="Số điện thoại">
                                     </div>
-
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="txtEmail" name="email"
-                                           placeholder="Địa chỉ email">
+                                    <input type="email" class="form-control form-control-user" name="Email"
+                                           asp-for="Email" placeholder="Địa chỉ email">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user" name="password"
-                                               id="txtPassword" placeholder="Mật khẩu">
+                                        <input type="password" class="form-control form-control-user" name="Password"
+                                               asp-for="Password"  placeholder="Mật khẩu">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user" name="password_again"
-                                               id="txtPassword_again" placeholder="Nhập lại mật khẩu">
+                                        <input type="password" class="form-control form-control-user" name="ConfirmPassword"
+                                               asp-for="ConfirmPassword" placeholder="Nhập lại mật khẩu">
                                     </div>
                                 </div>
                                 <button type="submit" href="#" id="btnRegister" class="btn btn-primary btn-user btn-block">
                                     Register Account
                                 </button>
                                 <hr>
-                                <a href="index.html" class="btn btn-google btn-user btn-block">
+                                <a href="#" class="btn btn-google btn-user btn-block">
                                     <i class="fab fa-google fa-fw"></i> Register with Google
                                 </a>
-                                <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                <a href="#" class="btn btn-facebook btn-user btn-block">
                                     <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
                                 </a>
                             </form>
@@ -88,19 +88,8 @@
     <script src="~/lib/jquery-easing/jquery.easing.min.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="~/js/sb-admin-2.min.js"></script>
-    <!-- Notifyjs-->
-    <script src="~/lib/notifyjs/dist/notify.js"></script>
-    <script src="~/lib/notifyjs/dist/styles/metro/notify-metro.js"></script>
-    <!-- Jquery-validation-->
-    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
-    <script src="~/lib/jquery-validation/dist/additional-methods.js"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
-    <script src="~/app/shared/tedu.js"></script>
-    <script src="~/app/Controller/register/index.js"></script>
 
-    <script>
-        var registerObject = registerController();
-        registerObject.initialize();
-    </script>
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
 </body>
 </html>

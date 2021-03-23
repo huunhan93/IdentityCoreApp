@@ -8,8 +8,9 @@ namespace IdentityCoreApp.Models.AccountViewModels
 {
     public class ForgotPasswordViewModel
     {
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessage = "Required")]
+        [Display(Name = "Email")]
         public string Email { get; set; }
+        public string Error { get; set; }
     }
 }

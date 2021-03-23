@@ -74,8 +74,11 @@ namespace IdentityCoreApp.Controllers
             return Redirect("/Login/Index");
         }
 
-        public IActionResult Register()
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Register(string returnUrl = null)
         {
+            ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
 
@@ -84,10 +87,9 @@ namespace IdentityCoreApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model, string returnUrl = null)
         {
-
             if (!ModelState.IsValid)
             {
-                return new ObjectResult(new GenericResult(false, model));
+                return View(model);
             }
             //MM/dd/yyy
             var user = new AppUser
@@ -109,18 +111,14 @@ namespace IdentityCoreApp.Controllers
                 var callbackUrl = Url.EmailConfirmationLink(user.Id, code, Request.Scheme);
                 await _emailSender.SendEmailConfirmationAsync(model.Email, callbackUrl);
 
-                await _signInManager.SignInAsync(user, isPersistent: false);
+                //await _signInManager.SignInAsync(user, isPersistent: false);
                 _logger.LogInformation("User created a new account with password.");
-                return new OkObjectResult(new GenericResult(true, "Đăng ký thành công!"));
+                return RedirectToAction(nameof(ThankYouForRegister));
             }
-            else
-            {
-                return new OkObjectResult(new GenericResult(false, result.Errors.ToString())); ;
-            }
-            //AddErrors(result);
+            AddErrors(result);
 
             // If we got this far, something failed, redisplay form
-            
+            return View(model);
         }
 
         public IActionResult ThankYouForRegister()
@@ -147,7 +145,14 @@ namespace IdentityCoreApp.Controllers
                 throw new ApplicationException($"Unable to load user with ID '{userId}'.");
             }
             var result = await _userManager.ConfirmEmailAsync(user, code);
+            
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
+        }
+
+        public IActionResult Error()
+        {
+
+            return View();
         }
 
         [HttpGet]
@@ -193,12 +198,13 @@ namespace IdentityCoreApp.Controllers
             return View();
         }
 
-
         [HttpGet]
         [AllowAnonymous]
         public IActionResult ForgotPassword()
         {
-            return View();
+            ForgotPasswordViewModel model = new ForgotPasswordViewModel();
+            model.Error = "";
+            return View(model);
         }
 
 
@@ -212,8 +218,9 @@ namespace IdentityCoreApp.Controllers
                 var user = await _userManager.FindByEmailAsync(model.Email);
                 if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
                 {
+                    model.Error = "The user does not exist or is not confirmed";
                     // Don't reveal that the user does not exist or is not confirmed
-                    return new ObjectResult(new GenericResult(false, "Tài khoản không tồn tại hoặc chưa kích hoạt."));
+                    return View(model);
                 }
 
                 // For more information on how to enable account confirmation and password reset please
@@ -222,11 +229,11 @@ namespace IdentityCoreApp.Controllers
                 var callbackUrl = Url.ResetPasswordCallbackLink(user.Id, code, Request.Scheme);
                 await _emailSender.SendEmailAsync(model.Email, "Reset Password",
                    $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
-                return new ObjectResult(new GenericResult(true, "Reset password thành công. Check email để nhận mật khẩu mới!"));
+                return RedirectToAction(nameof(ForgotPasswordConfirmation));
             }
 
             // If we got this far, something failed, redisplay form
-            return new ObjectResult(new GenericResult(false, "Lỗi không xác định"));
+            return View(model);
         }
 
         [HttpGet]
