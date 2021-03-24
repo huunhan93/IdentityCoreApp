@@ -46,7 +46,7 @@
                 dateType: 'json',
                 url: '/Account/Logout',
                 success: function (res) {
-                    window.location.href = "/Login/Index";
+                    window.location.href = "/Account/Login";
                 },
                 error: function () {
                     tedu.notify('Có lỗi xảy ra', 'error');

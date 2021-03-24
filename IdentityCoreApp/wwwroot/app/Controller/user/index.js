@@ -1,10 +1,12 @@
 ﻿var UserController = function () {
-    this.initialize = function () {
+    var _this = {};
+    _this.initialize = function () {
         loadData();
         registerEvents();
-    }
+    };
 
     function registerEvents() {
+        //$('#dataTable').DataTable();
         //Init validation
         $('#frmMaintainance').validate({
             errorClass: 'red',
@@ -54,7 +56,7 @@
             var that = $(this).data('id');
             $.ajax({
                 type: "GET",
-                url: "/Admin/User/GetById",
+                url: "/User/GetById",
                 data: { id: that },
                 dataType: "json",
                 beforeSend: function () {
@@ -102,7 +104,7 @@
 
                 $.ajax({
                     type: "POST",
-                    url: "/Admin/User/SaveEntity",
+                    url: "/User/SaveEntity",
                     data: {
                         Id: id,
                         FullName: fullName,
@@ -140,7 +142,7 @@
             tedu.confirm('Are you sure to delete?', function () {
                 $.ajax({
                     type: "POST",
-                    url: "/Admin/User/Delete",
+                    url: "/User/Delete",
                     data: { id: that },
                     beforeSend: function () {
                         tedu.startLoading();
@@ -211,7 +213,7 @@
     function loadData(isPageChanged) {
         $.ajax({
             type: "GET",
-            url: "/admin/user/GetAllPaging",
+            url: "/user/GetAllPaging",
             data: {
                 categoryId: $('#ddl-category-search').val(),
                 keyword: $('#txt-search-keyword').val(),
@@ -227,12 +229,16 @@
                 var render = "";
                 if (response.RowCount > 0) {
                     $.each(response.Results, function (i, item) {
+                        var avatar = item.Avatar;
                         render += Mustache.render(template, {
                             FullName: item.FullName,
                             Id: item.Id,
-                            UserName: item.UserName,
-                            Avatar: item.Avatar === undefined ? '<img src="/admin-side/images/user.png" width=25 />' : '<img src="' + item.Avatar + '" width=25 />',
+                            Email: item.Email,
+                            PhoneNumber: item.PhoneNumber,
+                            Address: item.Address,
+                            Avatar: (item.Avatar === undefined || item.Avatar === null) ? '<img src="/img/undraw_profile.svg" width=25 />' : '<img src="' + item.Avatar + '" width=25 />',
                             DateCreated: tedu.dateTimeFormatJson(item.DateCreated),
+                            BirthDay: tedu.dateTimeFormatJson(item.BirthDay),
                             Status: tedu.getStatus(item.Status)
                         });
                     });
@@ -269,15 +275,17 @@
         //Bind Pagination Event
         $('#paginationUL').twbsPagination({
             totalPages: totalsize,
-            visiblePages: 7,
-            first: 'Đầu',
-            prev: 'Trước',
-            next: 'Tiếp',
-            last: 'Cuối',
+            visiblePages: 5,
+            first: false,
+            prev: 'Previous',
+            next: 'Next',
+            last: false,
             onPageClick: function (event, p) {
                 tedu.configs.pageIndex = p;
                 setTimeout(callBack(), 200);
             }
         });
     }
+
+    return _this;
 }
